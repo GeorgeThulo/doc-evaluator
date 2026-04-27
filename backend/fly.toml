@@ -1,6 +1,8 @@
-# fly.toml file for doc-evaluator-backend
+# fly.toml configuration for doc-evaluator backend
 
 app = "doc-evaluator-backend"
+
+primary_region = "jnb"  # Johannesburg; change if you prefer another region
 
 [build]
   dockerfile = "backend/Dockerfile"
