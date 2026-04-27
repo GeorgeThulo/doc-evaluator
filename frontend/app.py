@@ -10,7 +10,8 @@ if uploaded_file and question:
     with st.spinner("Processing..."):
         files = {"file": (uploaded_file.name, uploaded_file, uploaded_file.type)}
         data = {"question": question}
-        response = requests.post("http://127.0.0.1:8000/ask", files=files, data=data)
+        # Use your deployed backend URL instead of localhost
+        response = requests.post("https://doc-evaluator.fly.dev/ask", files=files, data=data)
 
         if response.status_code == 200:
             result = response.json()
