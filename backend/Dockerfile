@@ -1,17 +1,20 @@
 FROM python:3.10-slim
 
-# Set working directory
 WORKDIR /app
 
-# Install dependencies
+# Install system dependencies for Pillow and pdfplumber
+RUN apt-get update && apt-get install -y \
+    libjpeg-dev \
+    zlib1g-dev \
+    libpng-dev \
+    libfreetype6-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend source code
 COPY . .
 
-# Expose port
 EXPOSE 8080
 
-# Run FastAPI with Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
