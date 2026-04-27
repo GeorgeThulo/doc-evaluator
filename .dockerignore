@@ -1,0 +1,32 @@
+# flyctl launch added from .gitignore
+# Virtual environments
+**\venv
+**\.env
+
+# Python cache
+**\__pycache__
+**\*.pyc
+**\*.pyo
+**\*.pyd
+
+# Binaries and libraries
+**\*.dll
+**\*.lib
+**\*.so
+**\*.dylib
+
+# Logs and temp files
+**\*.log
+**\*.tmp
+
+# IDE/project files
+**\.vscode
+**\.idea
+
+# OS files
+**\.DS_Store
+**\Thumbs.db
+
+# Streamlit specific
+**\.streamlit
+fly.toml
